@@ -4,3 +4,9 @@ export type Social = {
   domain: string;
   profileUrl: string;
 };
+
+export type News = {
+  date: string;
+  content: string;
+  path: string;
+};
