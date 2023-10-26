@@ -1,0 +1,10 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --noto-sans-jp: "Noto Sans JP";
+
+  color: var(--black);
+  font-family: var(--noto-sans-jp);
+  font-size: 10px;
+  font-weight: 500;
+}
