@@ -8,5 +8,6 @@ export const Header = ({ children }: ComponentProps<"header">) => (
       className="w-12 h-12 border border-solid border-black-lighten-1 rounded-3xl"
     />
     {children}
+    ahi
   </header>
 );
