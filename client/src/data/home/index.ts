@@ -38,13 +38,11 @@ export const socialList: Social[] = [
 
 export const newsList: News[] = [
   {
-    date: "2023-10-26",
-    content: "これ作り始めました",
-    path: "/",
-  },
-  {
     date: "2023-10-28",
     content: "🚀 v1.0.0",
-    path: "/",
+  },
+  {
+    date: "2023-10-26",
+    content: "これ作り始めました",
   },
 ];

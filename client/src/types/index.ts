@@ -8,5 +8,5 @@ export type Social = {
 export type News = {
   date: string;
   content: string;
-  path: string;
+  path?: string;
 };

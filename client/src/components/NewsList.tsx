@@ -1,20 +1,18 @@
-import { News } from "~/types";
+import { News as TNews } from "~/types";
+import { News } from "./News";
 
 type NewsListProps = {
-  newsList: News[];
+  newsList: TNews[];
 };
 
 export const NewsList = ({ newsList }: NewsListProps) => (
   <ul className="w-full">
     {newsList.map((news) => (
       <li
-        key={news.path}
+        key={news.date}
         className="w-full pt-4 after:content-[''] after:w-full after:h-[1px] after:block after:mt-4 after:bg-black-lighten-2"
       >
-        <a
-          href={news.path}
-          className="w-full block px-4 text-base text-black-lighten-1 hover:text-black overflow-hidden text-ellipsis whitespace-nowrap duration-300"
-        >{`${news.date}: ${news.content}`}</a>
+        <News news={news} />
       </li>
     ))}
   </ul>
