@@ -29,13 +29,13 @@ jobs:
         uses: ./.github/actions/setup-client
 
       - name: Install Deps
-        run: bun i --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: ESLint
-        run: bun lint
+        run: bun run lint
 
       - name: Typecheck
-        run: bun typecheck
+        run: bun run typecheck
 
       - name: Build
-        run: bun build
+        run: bun run build
