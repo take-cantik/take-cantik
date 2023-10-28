@@ -25,3 +25,9 @@ variable "secret_key" {
   type        = string
   description = "iam secret access key"
 }
+
+variable "domain_name" {
+  default     = "take-cantik.com"
+  type        = string
+  description = "domain name"
+}
