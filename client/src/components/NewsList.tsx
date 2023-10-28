@@ -1,4 +1,4 @@
-import { News } from "../types";
+import { News } from "~/types";
 
 type NewsListProps = {
   newsList: News[];

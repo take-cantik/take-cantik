@@ -1,4 +1,4 @@
-import { News, Social } from "../../types";
+import { News, Social } from "~/types";
 
 export const bio =
   "株式会社ハックツ: エンジニア\nPHP, Laravel, AWSなどを使っています";
