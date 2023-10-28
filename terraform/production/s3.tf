@@ -39,6 +39,11 @@ resource "aws_s3_bucket_policy" "hosting_policy" {
         Principal = {
           Service = "cloudfront.amazonaws.com"
         },
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = aws_cloudfront_distribution.web_cf.arn
+          }
+        },
         Action    = "s3:GetObject",
         Resource = "${aws_s3_bucket.hosting_s3.arn}/*",
       },
