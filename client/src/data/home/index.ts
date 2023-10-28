@@ -42,4 +42,9 @@ export const newsList: News[] = [
     content: "これ作り始めました",
     path: "/",
   },
+  {
+    date: "2023-10-28",
+    content: "🚀 v1.0.0",
+    path: "/",
+  },
 ];
