@@ -7,7 +7,7 @@ import { bio, newsList, socialList } from "./data/home";
 function Home() {
   return (
     <>
-      <Header>take-cantik.dev</Header>
+      <Header>take-cantik.com</Header>
       <main className="w-full min-h-screen bg-gray-lighten-2">
         <Container>
           <section className="w-full">
