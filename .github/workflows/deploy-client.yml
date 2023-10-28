@@ -1,0 +1,46 @@
+name: Deploy Client
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "client/**"
+
+defaults:
+  run:
+    working-directory: client
+
+jobs:
+  deploy-clinet:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup-client
+
+      - name: Install Deps
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        run: bun run build
+
+      # AWS CLIにキーを設定をする
+      - name: AWS set Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      # S3にビルドファイルをアップロード
+      - name: Push to S3
+        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
+
+      # Cloudfrontのキャッシュ削除
+      - name: Create Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
