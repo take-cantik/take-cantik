@@ -1,8 +1,8 @@
 import { Container } from "~/components/Container";
 import { Header } from "~/components/Header";
-import { NewsList } from "~/components/NewsList";
-import { SocialLink } from "~/components/SocialCard";
-import { bio, newsList, socialList } from "~/data/home";
+import { NewsList } from "~/pages/home/components/NewsList";
+import { SocialLink } from "~/pages/home/components/SocialCard";
+import { bio, newsList, socialList } from "~/pages/home/data";
 
 function Home() {
   return (

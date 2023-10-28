@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { News as TNews } from "~/types";
+import { News } from "~/pages/home/types";
 
 type NewsProps = {
-  news: TNews;
+  news: News;
 };
 
-export const News = ({ news }: NewsProps) => (
+export const NewsItem = ({ news }: NewsProps) => (
   <>
     {news.path ? (
       <Link

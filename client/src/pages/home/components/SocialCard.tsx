@@ -1,4 +1,4 @@
-import { Social } from "~/types";
+import { Social } from "~/pages/home/types";
 
 type SocialCardProps = {
   social: Social;
