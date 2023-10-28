@@ -24,6 +24,14 @@ resource "aws_s3_bucket_website_configuration" "hosting_config" {
   }
 }
 
+# ブロックパブリックアクセス
+resource "aws_s3_bucket_public_access_block" "hosting_block" {
+  bucket             = aws_s3_bucket.hosting_s3.id
+
+  block_public_acls  = true
+  ignore_public_acls = true
+}
+
 # バケットポリシー
 resource "aws_s3_bucket_policy" "hosting_policy" {
   bucket = aws_s3_bucket.hosting_s3.id
