@@ -16,6 +16,7 @@ resource "aws_cloudfront_distribution" "web_cf" {
 
   enabled             = true
   is_ipv6_enabled     = false
+  default_root_object = "index.html"
 
   default_cache_behavior {
     allowed_methods          = ["GET", "HEAD"]
