@@ -44,8 +44,8 @@ resource "aws_s3_bucket_policy" "hosting_policy" {
             "AWS:SourceArn" = aws_cloudfront_distribution.web_cf.arn
           }
         },
-        Action    = "s3:GetObject",
-        Resource = "${aws_s3_bucket.hosting_s3.arn}/*",
+        Action    = ["s3:GetObject","s3:GetObjectVersion"],
+        Resource  = "${aws_s3_bucket.hosting_s3.arn}/*",
       },
     ]
   })
