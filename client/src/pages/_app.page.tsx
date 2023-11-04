@@ -1,5 +1,6 @@
 import "~/styles/reset.css";
 import "~/styles/global.css";
+import "~/styles/markdown.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";

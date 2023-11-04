@@ -1,0 +1,75 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.markdown {
+  @apply text-lg text-black leading-normal break-words;
+}
+
+.markdown > * + * {
+  @apply mt-0 mb-4;
+}
+
+.markdown li + li {
+  @apply mt-1;
+}
+
+.markdown li > p + p {
+  @apply mt-6;
+}
+
+.markdown strong {
+  @apply font-bold;
+}
+
+.markdown a {
+  @apply text-black-lighten-1 border-b border-b-black-lighten-1;
+}
+
+.markdown strong a {
+  @apply font-bold;
+}
+
+.markdown h1 {
+  @apply leading-tight border-b text-black text-3xl font-bold mb-4 mt-6 pb-2;
+}
+
+.markdown h2 {
+  @apply leading-tight border-b text-black text-2xl font-bold mb-4 mt-6 pb-2;
+}
+
+.markdown h3 {
+  @apply leading-snug text-xl text-black font-bold mb-4 mt-6;
+}
+
+.markdown blockquote {
+  @apply text-base border-l-4 border-gray pl-4 pr-4;
+}
+
+.markdown pre code {
+  @apply block bg-gray-lighten-1 px-2 py-4 overflow-x-scroll rounded;
+}
+
+.markdown ul {
+  @apply pl-8 list-disc;
+}
+
+.markdown ol {
+  @apply pl-8 list-decimal;
+}
+
+.markdown kbd {
+  @apply text-xs inline-block rounded border px-1 py-5 align-middle shadow;
+}
+
+.markdown table {
+  @apply text-base border-gray;
+}
+
+.markdown th {
+  @apply border py-1 px-3;
+}
+
+.markdown td {
+  @apply border py-1 px-3;
+}
