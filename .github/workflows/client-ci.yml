@@ -7,15 +7,15 @@ on:
       - main
     paths:
       - ".github/workflows/client-ci.yml"
-      - "react-client/**"
+      - "client/**"
   pull_request:
     paths:
       - ".github/workflows/client-ci.yml"
-      - "react-client/**"
+      - "client/**"
 
 defaults:
   run:
-    working-directory: react-client
+    working-directory: client
 
 jobs:
   clinet-ci:

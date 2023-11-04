@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "typecheck": "tsc",
     "lint": "next lint --dir src --fix",
     "format": "prettier --write src/*"
   },
