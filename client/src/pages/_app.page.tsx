@@ -2,6 +2,7 @@ import "~/styles/reset.css";
 import "~/styles/global.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
           images: [{ url: "https://take-cantik.com/images/take-cantik.jpg" }],
         }}
       />
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Component {...pageProps} />
     </>
   );
