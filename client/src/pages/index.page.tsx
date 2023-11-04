@@ -1,3 +1,5 @@
+import { HomePageTemplete } from "./home/HomePageTemplate";
+
 export default function Home() {
-  return <main>index</main>;
+  return <HomePageTemplete />;
 }
