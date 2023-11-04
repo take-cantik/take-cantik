@@ -7,16 +7,16 @@ type CodeProps = ClassAttributes<HTMLElement> &
   HTMLAttributes<HTMLElement> &
   ExtraProps;
 
-export const Code = ({ children, className, ...props }: CodeProps) => {
+export const Code = ({ children, className }: CodeProps) => {
   const match = /language-(\w+)/.exec(className || "");
 
-  return match ? (
-    <SyntaxHighlighter language={match[1]} styles={github}>
+  return (
+    <SyntaxHighlighter
+      language={match ? match[1] : "txt"}
+      styles={github}
+      showLineNumbers
+    >
       {String(children).replace(/\n$/, "")}
     </SyntaxHighlighter>
-  ) : (
-    <code className={className} {...props}>
-      {children}
-    </code>
   );
 };
