@@ -6,11 +6,11 @@ on:
     branches:
       - main
     paths:
-      - "react-client/**"
+      - "client/**"
 
 defaults:
   run:
-    working-directory: react-client
+    working-directory: client
 
 jobs:
   deploy-clinet:
@@ -39,7 +39,7 @@ jobs:
 
       # S3にビルドファイルをアップロード
       - name: Push to S3
-        run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
+        run: aws s3 sync ./out s3://${{ secrets.AWS_S3_BUCKET_NAME }}
 
       # Cloudfrontのキャッシュ削除
       - name: Create Invalidate CloudFront
