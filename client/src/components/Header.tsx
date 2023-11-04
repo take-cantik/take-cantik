@@ -6,7 +6,9 @@ export const Header = ({ children }: ComponentProps<"header">) => (
     <Image
       src="/images/take-cantik.jpg"
       alt="take-cantik's icon"
-      className="w-12 h-12 border border-solid border-black-lighten-1 rounded-3xl"
+      width={48}
+      height={48}
+      className="border border-solid border-black-lighten-1 rounded-3xl"
     />
     {children}
   </header>
