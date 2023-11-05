@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "web_cf" {
     error_caching_min_ttl = 10
     error_code            = 403
     response_code         = 403
-    response_page_path    = "404/index.html"
+    response_page_path    = "/404/index.html"
   }
 
   restrictions {
