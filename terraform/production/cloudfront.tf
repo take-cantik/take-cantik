@@ -25,6 +25,11 @@ resource "aws_cloudfront_distribution" "web_cf" {
     compress                 = true
     target_origin_id         = aws_s3_bucket.hosting_s3.bucket_regional_domain_name
     viewer_protocol_policy   = "redirect-to-https"
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.web_cf_function_add_index_html.arn
+    }
   }
 
   custom_error_response {
@@ -59,6 +64,23 @@ resource "aws_cloudfront_origin_access_control" "web_cf_oac" {
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
 }
+
+# ---------------------------
+# CloudFront Function
+# ---------------------------
+
+# URI 末尾に index.html を付ける Function
+resource "aws_cloudfront_function" "web_cf_function_add_index_html" {
+  name    = "${var.project_name}-${var.env}-web-cf-function-add-index-html"
+  runtime = "cloudfront-js-1.0"
+  publish = true
+
+  code    = file("./src/add-index-html.js")
+}
+
+# ---------------------------
+# CloudFront Data
+# ---------------------------
 
 data "aws_cloudfront_cache_policy" "caching_optimazied" {
   name = "Managed-CachingOptimized"
