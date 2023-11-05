@@ -7,7 +7,7 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version-file: "react-client/.node-version"
+        node-version-file: "client/.node-version"
     - name: Setup Bun
       uses: oven-sh/setup-bun@v1
       with:
