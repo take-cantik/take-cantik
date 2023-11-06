@@ -1,6 +1,6 @@
 function handler(event) {
-  const request = event.request;
-  const uri = request.uri;
+  var request = event.request;
+  var uri = request.uri;
 
   // Check whether the URI is missing a file name.
   if (uri.endsWith("/")) {
@@ -8,7 +8,7 @@ function handler(event) {
   }
   // Check whether the URI is missing a file extension.
   else if (!uri.includes(".")) {
-    const response = {
+    var response = {
       statusCode: 308,
       statusDescription: "Found",
       headers: {
