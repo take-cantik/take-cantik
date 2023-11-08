@@ -1,6 +1,7 @@
 import { Container } from "~/components/Container";
 import { Header } from "~/components/Header";
 import { Article } from "./components/Article";
+import { TabNavigation } from "~/components/TabNavigation";
 
 type ArticleDetailPageTemplateProps = {
   emoji: string;
@@ -17,6 +18,7 @@ export const ArticleDetailPageTemplate = ({
 }: ArticleDetailPageTemplateProps) => (
   <>
     <Header>take-cantik.com / {title}</Header>
+    <TabNavigation />
     <main className="w-full min-h-screen bg-gray-lighten-2">
       <Container>
         <Article
