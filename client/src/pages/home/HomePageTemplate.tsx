@@ -2,11 +2,13 @@ import { Container } from "~/components/Container";
 import { Header } from "~/components/Header";
 import { NewsList } from "~/pages/home/components/NewsList";
 import { SocialLink } from "~/pages/home/components/SocialCard";
+import { TabNavigation } from "~/components/TabNavigation";
 import { BIO, NEWS_LIST, SOCIAL_LIST } from "./constants";
 
 export const HomePageTemplete = () => (
   <>
     <Header>take-cantik.com</Header>
+    <TabNavigation />
     <main className="w-full min-h-screen bg-gray-lighten-2">
       <Container>
         <section className="w-full">
