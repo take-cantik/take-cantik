@@ -17,7 +17,11 @@ export const ArticleDetailPageTemplate = ({
   markdownText,
 }: ArticleDetailPageTemplateProps) => (
   <>
-    <Header>take-cantik.com / {title}</Header>
+    <Header>
+      <span className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+        take-cantik.com / {title}
+      </span>
+    </Header>
     <TabNavigation />
     <main className="w-full min-h-screen bg-gray-lighten-2">
       <Container>
