@@ -17,7 +17,9 @@ export const Article = ({ emoji, title, date, markdownText }: ArticleProps) => {
         <span className="text-4xl">{emoji}</span>
         <p className="text-xl text-black-lighten-1">{date}</p>
       </div>
-      <h1 className="text-3xl font-bold pb-3 mb-6 border-b">{title}</h1>
+      <h1 className="text-2xl lg:text-3xl font-bold pb-2 lg:pb-3 mb-5 lg:mb-6 border-b">
+        {title}
+      </h1>
       <Markdown
         components={{
           h1: (props) => <Heading level="1" {...props} />,
