@@ -38,6 +38,11 @@ export const SOCIAL_LIST: Social[] = [
 
 export const NEWS_LIST: News[] = [
   {
+    date: "2023-11-04",
+    content: "📝 フロントのむちむちが出てしまった。",
+    path: "/articles/20231104/",
+  },
+  {
     date: "2023-10-28",
     content: "🚀 v1.0.0",
   },
