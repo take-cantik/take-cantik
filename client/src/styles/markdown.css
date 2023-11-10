@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 .markdown {
-  @apply text-lg text-black leading-normal break-words;
+  @apply text-base lg:text-lg text-black leading-normal break-words;
 }
 
 .markdown > * + * {
@@ -31,15 +31,15 @@
 }
 
 .markdown h1 {
-  @apply leading-tight border-b text-black text-3xl font-bold mb-4 mt-6 pb-2;
+  @apply leading-tight border-b text-black text-2xl lg:text-3xl font-bold mb-4 mt-6 pb-2;
 }
 
 .markdown h2 {
-  @apply leading-tight border-b text-black text-2xl font-bold mb-4 mt-6 pb-2;
+  @apply leading-tight border-b text-black text-xl lg:text-2xl font-bold mb-4 mt-6 pb-2;
 }
 
 .markdown h3 {
-  @apply leading-snug text-xl text-black font-bold mb-4 mt-6;
+  @apply leading-snug text-lg lg:text-xl text-black font-bold mb-4 mt-6;
 }
 
 .markdown blockquote {
