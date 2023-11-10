@@ -19,9 +19,9 @@ export const TabNavigation = () => {
         Overview
       </Link>
       <Link
-        href="/articles"
+        href="/articles/"
         className={`w-fit h-8 flex items-center gap-2 relative px-2 text-black-lighten-2 rounded bg-gray-lighten-1 hover:bg-gray duration-300 ${
-          pathname === "/articles" &&
+          pathname === "/articles/" &&
           "after:content-[''] after:w-full after:h-1 after:absolute after:left-0 after:-bottom-1 after:bg-black-lighten-2 after:rounded-sm"
         }`}
       >
