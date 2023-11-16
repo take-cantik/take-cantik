@@ -8,8 +8,9 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version-file: "client/.node-version"
-    - name: Setup Bun
-      uses: oven-sh/setup-bun@v1
+    - name: Setup Pnpm
+      uses: pnpm/action-setup@v2
       with:
-        bun-version: "1.0.7"
+        version: 8
+
     # TODO: キャッシュの設定を追加

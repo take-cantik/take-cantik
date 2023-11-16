@@ -24,19 +24,19 @@ jobs:
         uses: ./.github/actions/setup-client
 
       - name: Install Deps
-        run: bun install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       ###########################
       # CI
       - name: ESLint
-        run: bun run lint
+        run: pnpm run lint
 
       - name: Typecheck
-        run: bun run typecheck
+        run: pnpm run typecheck
       ###########################
 
       - name: Build
-        run: bun run build
+        run: pnpm run build
 
       # AWS CLIにキーを設定をする
       - name: AWS set Credentials
