@@ -1,4 +1,4 @@
-import { News, Social } from "~/pages/home/types";
+import { Social } from "~/pages/home/types";
 
 export const BIO =
   "株式会社ハックツ: エンジニア\nPHP, Laravel, AWSなどを使っています";
@@ -33,21 +33,5 @@ export const SOCIAL_LIST: Social[] = [
     iconPath: "/images/logos/facebook.png",
     domain: "facebook.com",
     profileUrl: "https://www.facebook.com/take.cantik",
-  },
-];
-
-export const NEWS_LIST: News[] = [
-  {
-    date: "2023-11-04",
-    content: "📝 フロントのむちむちが出てしまった。",
-    path: "/articles/20231104/",
-  },
-  {
-    date: "2023-10-28",
-    content: "🚀 v1.0.0",
-  },
-  {
-    date: "2023-10-26",
-    content: "これ作り始めました",
   },
 ];
