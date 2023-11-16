@@ -3,9 +3,14 @@ import { Header } from "~/components/Header";
 import { NewsList } from "~/pages/home/components/NewsList";
 import { SocialLink } from "~/pages/home/components/SocialCard";
 import { TabNavigation } from "~/components/TabNavigation";
-import { BIO, NEWS_LIST, SOCIAL_LIST } from "./constants";
+import { BIO, SOCIAL_LIST } from "./constants";
+import { News } from "./types";
 
-export const HomePageTemplete = () => (
+type HomePageTempleteProps = {
+  newsList: News[];
+};
+
+export const HomePageTemplete = ({ newsList }: HomePageTempleteProps) => (
   <>
     <Header>take-cantik.com</Header>
     <TabNavigation />
@@ -27,7 +32,7 @@ export const HomePageTemplete = () => (
         </section>
         <section className="w-full mt-9">
           <h2 className="text-lg lg:text-xl font-bold mb-2">News</h2>
-          <NewsList newsList={NEWS_LIST} />
+          <NewsList newsList={newsList} />
         </section>
       </Container>
     </main>
