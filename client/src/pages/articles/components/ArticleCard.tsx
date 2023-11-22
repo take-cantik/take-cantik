@@ -21,8 +21,8 @@ export const ArticleCard = ({
     </Link>
     <div className="w-full">
       <p className="text-base text-black-lighten-1">{date}</p>
-      <Link href={`/articles/${id}/`} className="w-fit block mb-2">
-        <h2 className="w-fit text-lg lg:text-xl font-bold after:content-[''] after:block after:w-0 hover:after:w-full after:h-[1px] after:bg-black after:duration-300">
+      <Link href={`/articles/${id}/`} className="w-full block mb-2 relative">
+        <h2 className="w-fit text-lg lg:text-xl font-bold before:content-[''] before:w-full before:h-full before:absolute before:block after:content-[''] after:block after:w-0 hover:after:w-full after:h-[1px] after:bg-black after:duration-300">
           {title}
         </h2>
       </Link>
