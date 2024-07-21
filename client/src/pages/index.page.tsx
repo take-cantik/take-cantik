@@ -3,6 +3,7 @@ import { HomePageTemplete } from "./home/HomePageTemplate";
 import { News } from "./home/types";
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
+import { NextSeo } from "next-seo";
 
 type HomePageProps = {
   newsList: News[];
@@ -49,5 +50,10 @@ export const getStaticProps: GetStaticProps<HomePageProps> = () => {
 export default function Home({
   newsList,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <HomePageTemplete newsList={newsList} />;
+  return (
+    <>
+      <NextSeo title="take-cantik.com - home" />
+      <HomePageTemplete newsList={newsList} />;
+    </>
+  );
 }

@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
 import { ArticleDetailPageTemplate } from "./ArticleDetailPageTemplate";
+import { NextSeo } from "next-seo";
 
 type ArticleDetailPageProps = {
   emoji: string;
@@ -59,12 +60,15 @@ function ArticleDetailPage({
   markdownText,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <ArticleDetailPageTemplate
-      emoji={emoji}
-      title={title}
-      date={date}
-      markdownText={markdownText}
-    />
+    <>
+      <NextSeo title={title} description={markdownText} />
+      <ArticleDetailPageTemplate
+        emoji={emoji}
+        title={title}
+        date={date}
+        markdownText={markdownText}
+      />
+    </>
   );
 }
 
