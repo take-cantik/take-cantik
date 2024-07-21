@@ -2,6 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ArticlePageTemplate } from "./ArticlePageTemplate";
 import matter from "gray-matter";
 import { readFileSync, readdirSync } from "fs";
+import { NextSeo } from "next-seo";
 
 type ArticlePageProps = {
   articleList: {
@@ -55,7 +56,12 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = () => {
 function ArticlePage({
   articleList,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <ArticlePageTemplate articleList={articleList} />;
+  return (
+    <>
+      <NextSeo title="take-cantik.com - articles" />
+      <ArticlePageTemplate articleList={articleList} />;
+    </>
+  );
 }
 
 export default ArticlePage;
